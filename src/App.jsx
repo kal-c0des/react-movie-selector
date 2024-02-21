@@ -1,6 +1,6 @@
 import { useState } from "react";
 import movieEntries from "./movie";
-import MovieDetails from "./components/movieDetails.jsx";
+import MovieDetails from "./components/MovieDetails.jsx";
 
 import "./App.css";
 import Movies from "./components/Movies.jsx";
