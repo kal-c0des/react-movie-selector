@@ -1,10 +1,9 @@
 import { useState } from "react";
-import MovieCard from "./MovieCard";
 import movieEntries from "./movie";
-import MovieDetails from "./movieDetails.jsx";
+import MovieDetails from "./components/movieDetails.jsx";
 
 import "./App.css";
-import movie from "./movie.js";
+import Movies from "./components/Movies.jsx";
 
 function App() {
   const [movieList, setMovieList] = useState(movieEntries);
@@ -33,22 +32,7 @@ function App() {
           />
         )}
       </div>
-      <div className="movie-list-container">
-        {movieList &&
-          movieList.map((movie) => {
-            return (
-              <MovieCard
-                key={movie.title}
-                icon={movie.icon}
-                title={movie.title}
-                year={movie.year}
-                genre={movie.genre}
-                description={movie.description}
-                onClickHandler={() => setSelectedMovie(movie)}
-              />
-            );
-          })}
-      </div>
+      <Movies movieList={movieList} onMovieClick={setSelectedMovie} />
     </div>
   );
 }
